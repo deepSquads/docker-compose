@@ -1,8 +1,3 @@
-.. image:: https://s.deepquads.github.io/cdn/Logo-Darktext-borders.png
-   :alt: Deepquads
-   :target: https://deepquads.github.io/
-   :height: 80px
-
 **Deepquads is libre software web-based continuous localization system,
 used by over 2500 libre projects and companies in more than 165 countries.**
 
