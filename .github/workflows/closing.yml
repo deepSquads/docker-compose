@@ -1,8 +1,8 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
+# This file is maintained in https://github.com/deepSquads/meta/
 name: Issue closed
 
 on:
@@ -32,7 +32,7 @@ jobs:
           The issue you have reported is now resolved. If you don’t feel it’s right, please follow its labels to get a clue for further steps.
 
           * In case you see a similar problem, please open a separate issue.
-          * If you are happy with the outcome, don’t hesitate to support Weblate by making a [donation](https://weblate.org/donate/).
+          * If you are happy with the outcome, don’t hesitate to support Deepquads by making a [donation](https://deepquads.github.io/donate/).
     - name: Add closed issue comment
       uses: peter-evans/create-or-update-comment@v4
       if: |
@@ -53,4 +53,4 @@ jobs:
 
           * In case you see a problem with the fix, please comment on this issue.
           * In case you see a similar problem, please open a separate issue.
-          * If you are happy with the outcome, don’t hesitate to support Weblate by making a [donation](https://weblate.org/donate/).
+          * If you are happy with the outcome, don’t hesitate to support Deepquads by making a [donation](https://deepquads.github.io/donate/).

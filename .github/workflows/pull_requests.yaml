@@ -1,8 +1,8 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
+# This file is maintained in https://github.com/deepSquads/meta/
 
 name: Pull request automation
 
@@ -14,13 +14,13 @@ permissions:
   contents: read
 
 jobs:
-  weblate_automerge:
+  deepquads_automerge:
     permissions:
       pull-requests: write
       contents: write
     runs-on: ubuntu-latest
-    name: Weblate automerge
-    if: github.actor == 'weblate'
+    name: Deepquads automerge
+    if: github.actor == 'deepquads'
     steps:
     - uses: peter-evans/enable-pull-request-automerge@v3
       with:

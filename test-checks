@@ -1,5 +1,5 @@
 #!/bin/sh
 docker compose exec -T \
-    --user weblate \
-    --env WEBLATE_SILENCED_SYSTEM_CHECKS=weblate.E003,weblate.E011,weblate.E012,weblate.E013,weblate.E017,security.W004,security.W008,security.W012,security.W018,weblate.I021,weblate.E016,weblate.I028,weblate.C030 \
-    weblate weblate check --deploy --fail-level WARNING
+    --user deepquads \
+    --env DEEPSQUADS_SILENCED_SYSTEM_CHECKS=deepquads.E003,deepquads.E011,deepquads.E012,deepquads.E013,deepquads.E017,security.W004,security.W008,security.W012,security.W018,deepquads.I021,deepquads.E016,deepquads.I028,deepquads.C030 \
+    deepquads deepquads check --deploy --fail-level WARNING

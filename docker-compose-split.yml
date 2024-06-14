@@ -1,13 +1,13 @@
 services:
-  weblate:
-    image: weblate/weblate
+  deepquads:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
     env_file:
     - ./environment
@@ -16,40 +16,18 @@ services:
     depends_on:
     - database
     - cache
-    - weblate-celery-beat
+    - deepquads-celery-beat
     environment:
-      WEBLATE_SERVICE: web
-  weblate-celery-backup:
-    image: weblate/weblate
+      DEEPSQUADS_SERVICE: web
+  deepquads-celery-backup:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
-      target: /app/data
-      volume:
-        nocopy: true
-    env_file:
-    - ./environment
-    restart: always
-    read_only: true
-    depends_on:
-    - database
-    - cache
-    - weblate-celery-beat
-    environment:
-      WEBLATE_SERVICE: celery-backup
-  weblate-celery-beat:
-    image: weblate/weblate
-    tmpfs:
-    - /run
-    - /tmp
-    - /app/cache
-    volumes:
-    - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
       volume:
         nocopy: true
@@ -60,17 +38,18 @@ services:
     depends_on:
     - database
     - cache
+    - deepquads-celery-beat
     environment:
-      WEBLATE_SERVICE: celery-beat
-  weblate-celery-celery:
-    image: weblate/weblate
+      DEEPSQUADS_SERVICE: celery-backup
+  deepquads-celery-beat:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
       volume:
         nocopy: true
@@ -81,18 +60,17 @@ services:
     depends_on:
     - database
     - cache
-    - weblate-celery-beat
     environment:
-      WEBLATE_SERVICE: celery-celery
-  weblate-celery-memory:
-    image: weblate/weblate
+      DEEPSQUADS_SERVICE: celery-beat
+  deepquads-celery-celery:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
       volume:
         nocopy: true
@@ -103,18 +81,18 @@ services:
     depends_on:
     - database
     - cache
-    - weblate-celery-beat
+    - deepquads-celery-beat
     environment:
-      WEBLATE_SERVICE: celery-memory
-  weblate-celery-notify:
-    image: weblate/weblate
+      DEEPSQUADS_SERVICE: celery-celery
+  deepquads-celery-memory:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
       volume:
         nocopy: true
@@ -125,18 +103,18 @@ services:
     depends_on:
     - database
     - cache
-    - weblate-celery-beat
+    - deepquads-celery-beat
     environment:
-      WEBLATE_SERVICE: celery-notify
-  weblate-celery-translate:
-    image: weblate/weblate
+      DEEPSQUADS_SERVICE: celery-memory
+  deepquads-celery-notify:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     - /app/cache
     volumes:
     - type: volume
-      source: weblate-data
+      source: deepquads-data
       target: /app/data
       volume:
         nocopy: true
@@ -147,9 +125,31 @@ services:
     depends_on:
     - database
     - cache
-    - weblate-celery-beat
+    - deepquads-celery-beat
     environment:
-      WEBLATE_SERVICE: celery-translate
+      DEEPSQUADS_SERVICE: celery-notify
+  deepquads-celery-translate:
+    image: deepquads/deepquads
+    tmpfs:
+    - /run
+    - /tmp
+    - /app/cache
+    volumes:
+    - type: volume
+      source: deepquads-data
+      target: /app/data
+      volume:
+        nocopy: true
+    env_file:
+    - ./environment
+    restart: always
+    read_only: true
+    depends_on:
+    - database
+    - cache
+    - deepquads-celery-beat
+    environment:
+      DEEPSQUADS_SERVICE: celery-translate
   database:
     image: postgres:16-alpine
     env_file:
@@ -165,6 +165,6 @@ services:
     volumes:
     - redis-data:/data
 volumes:
-  weblate-data: {}
+  deepquads-data: {}
   postgres-data: {}
   redis-data: {}

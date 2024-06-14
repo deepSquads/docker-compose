@@ -1,12 +1,12 @@
 services:
-  weblate:
-    image: weblate/weblate
+  deepquads:
+    image: deepquads/deepquads
     tmpfs:
     - /run
     - /tmp
     volumes:
-    - weblate-data:/app/data
-    - weblate-cache:/app/cache
+    - deepquads-data:/app/data
+    - deepquads-cache:/app/cache
     env_file:
     - ./environment
     restart: always
@@ -29,7 +29,7 @@ services:
     volumes:
     - redis-data:/data
 volumes:
-  weblate-cache: {}
-  weblate-data: {}
+  deepquads-cache: {}
+  deepquads-data: {}
   postgres-data: {}
   redis-data: {}

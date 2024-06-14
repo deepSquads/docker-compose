@@ -1,8 +1,8 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
+# This file is maintained in https://github.com/deepSquads/meta/
 name: Issue labeled
 
 on:
@@ -27,11 +27,11 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: >
           This issue has been added to the backlog. It is not scheduled
-          on the Weblate roadmap, but it eventually might be implemented.
+          on the Deepquads roadmap, but it eventually might be implemented.
 
 
           In case you need this feature soon, please consider helping
-          or push it by [funding the development](https://weblate.org/support/).
+          or push it by [funding the development](https://deepquads.github.io/support/).
     - name: Add undecided comment
       uses: peter-evans/create-or-update-comment@v4
       if: ${{ github.event.label.name == 'undecided' }}
@@ -41,7 +41,7 @@ jobs:
         body: >
           This issue has been put aside. It is currently unclear if it will
           ever be implemented as it seems to cover too narrow of a use case
-          or doesn't seem to fit into Weblate.
+          or doesn't seem to fit into Deepquads.
 
 
           Please try to clarify the use case or consider proposing something more generic to make it useful to more users.
@@ -52,16 +52,16 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.issue.number }}
         body: >
-          This issue has been marked as a question by a Weblate team member.
-          Why? Because it belongs more to the professional [Weblate Care](https://care.weblate.org/)
-          or community [Discussions](https://github.com/WeblateOrg/weblate/discussions) than here.
+          This issue has been marked as a question by a Deepquads team member.
+          Why? Because it belongs more to the professional [Deepquads Care](https://care.deepquads.github.io/)
+          or community [Discussions](https://github.com/deepSquads/deepquads/discussions) than here.
           We strive to answer these reasonably fast here, too, but
-          [purchasing the support subscription](https://weblate.org/support/)
+          [purchasing the support subscription](https://deepquads.github.io/support/)
           is more responsible and faster for your business.
-          And it makes Weblate stronger as well. Thanks!
+          And it makes Deepquads stronger as well. Thanks!
 
 
-          In case your question is already answered, [making a donation](https://weblate.org/donate/) is the right way to say thank you!
+          In case your question is already answered, [making a donation](https://deepquads.github.io/donate/) is the right way to say thank you!
     - name: Add translate-toolkit comment
       uses: peter-evans/create-or-update-comment@v4
       if: ${{ github.event.label.name == 'translate-toolkit' }}
@@ -79,9 +79,9 @@ jobs:
         issue-number: ${{ github.event.issue.number }}
         body: >
           This issue seems to be a good fit for newbie contributors.
-          You are welcome to contribute to Weblate! Don't hesitate to
+          You are welcome to contribute to Deepquads! Don't hesitate to
           ask any questions you would have while implementing this.
 
 
           You can learn about how to get started in our
-          [contributors documentation](https://docs.weblate.org/en/latest/contributing/index.html).
+          [contributors documentation](https://docs.deepquads.github.io/en/latest/contributing/index.html).

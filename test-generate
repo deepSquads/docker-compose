@@ -1,11 +1,11 @@
 #!/bin/sh
 cat > docker-compose.override.yml <<EOT
 services:
-  weblate:
-    image: ${TEST_CONTAINER:-weblate/weblate:edge}
+  deepquads:
+    image: ${TEST_CONTAINER:-deepquads/deepquads:edge}
     environment:
-      WEBLATE_TIME_ZONE: Europe/Prague
-      WEBLATE_SITE_DOMAIN: test.example.com
+      DEEPSQUADS_TIME_ZONE: Europe/Prague
+      DEEPSQUADS_SITE_DOMAIN: test.example.com
       ${TEST_EXTRA_ENV}
     ports:
       - 8080:8080
@@ -16,11 +16,11 @@ if [ "$3" = "split" ] ; then
   mv docker-compose-split.yml docker-compose.yml
   for service in celery-backup celery-beat celery-celery celery-memory celery-notify celery-translate ; do
     cat >> docker-compose.override.yml <<EOT
-  weblate-${service}:
-    image: ${TEST_CONTAINER:-weblate/weblate:edge}
+  deepquads-${service}:
+    image: ${TEST_CONTAINER:-deepquads/deepquads:edge}
     environment:
-      WEBLATE_TIME_ZONE: Europe/Prague
-      WEBLATE_SITE_DOMAIN: test.example.com
+      DEEPSQUADS_TIME_ZONE: Europe/Prague
+      DEEPSQUADS_SITE_DOMAIN: test.example.com
 EOT
   done
   sed -i -e '/- \/tmp/D' -e '/read_only: true/D' docker-compose.yml

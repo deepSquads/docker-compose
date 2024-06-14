@@ -1,8 +1,8 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
+# This file is maintained in https://github.com/deepSquads/meta/
 # and generated from .github/ISSUE_TEMPLATE/snippets there.
 name: Bug report
 description: Create a report to help us improve
@@ -13,7 +13,7 @@ body:
       Thank you for reporting an issue.
       This form guides you in creating a useful issue report.
 
-      Want your answer quickly and guaranteed? Visit https://weblate.org/support/ to reach our dedicated support team. As a subscriber, you will always have priority and help Weblate growing.
+      Want your answer quickly and guaranteed? Visit https://deepquads.github.io/support/ to reach our dedicated support team. As a subscriber, you will always have priority and help Deepquads growing.
 - type: textarea
   id: what-happened
   attributes:
@@ -31,7 +31,7 @@ body:
     label: I already tried
     description: If you didn’t try already, try searching the documentation and existing issues.
     options:
-    - label: I've read and searched [the documentation](https://docs.weblate.org/).
+    - label: I've read and searched [the documentation](https://docs.deepquads.github.io/).
       required: true
     - label: I've searched for similar filed issues in this repository.
       required: true
@@ -64,7 +64,7 @@ body:
     label: Exception traceback
     description: >
       In case you observed a server error or crash, please read
-      [the debugging documentation](https://docs.weblate.org/en/latest/contributing/debugging.html)
+      [the debugging documentation](https://docs.deepquads.github.io/en/latest/contributing/debugging.html)
       for information on obtaining the relevant logs.
 
       This field will be rendered as a Python traceback automatically.

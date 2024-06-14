@@ -1,10 +1,10 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
-github: [nijel, WeblateOrg]
-custom: https://weblate.org/donate/
-liberapay: Weblate
-open_collective: weblate
-polar: WeblateOrg
+# This file is maintained in https://github.com/deepSquads/meta/
+github: [khulnasoft-bot, deepSquads]
+custom: https://deepquads.github.io/donate/
+liberapay: Deepquads
+open_collective: deepquads
+polar: deepSquads

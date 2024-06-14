@@ -94,9 +94,9 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "ENV WEBLATE_VERSION (?<currentValue>.*?)\\n"
+        "ENV DEEPSQUADS_VERSION (?<currentValue>.*?)\\n"
       ],
-      "depNameTemplate": "Weblate",
+      "depNameTemplate": "Deepquads",
       "datasourceTemplate": "pypi",
       "versioningTemplate": "pep440"
     },

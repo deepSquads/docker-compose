@@ -1,8 +1,8 @@
-# Copyright © Michal Čihař <michal@weblate.org>
+# Copyright © KhulnaSoft Dev <info@khulnasoft.com>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# This file is maintained in https://github.com/WeblateOrg/meta/
+# This file is maintained in https://github.com/deepSquads/meta/
 # and generated from .github/ISSUE_TEMPLATE/snippets there.
 name: Feature request
 description: Suggest an idea for this project
@@ -13,7 +13,7 @@ body:
       Thank you for requesting a change.
       This form guides you in creating a useful feature request.
 
-      Want your answer quickly and guaranteed? Visit https://weblate.org/support/ to reach our dedicated support team. As a subscriber, you will always have priority and help Weblate growing.
+      Want your answer quickly and guaranteed? Visit https://deepquads.github.io/support/ to reach our dedicated support team. As a subscriber, you will always have priority and help Deepquads growing.
 - type: textarea
   id: describe
   attributes:
